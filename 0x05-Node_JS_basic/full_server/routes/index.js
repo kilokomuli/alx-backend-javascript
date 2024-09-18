@@ -1,6 +1,6 @@
 const http = require("http");
-const AppController = require("../controllers.AppController");
-const StudentsController = require("../controllers.StudentsController");
+const AppController = require("../controllers/AppController");
+const StudentsController = require("../controllers/StudentsController");
 const express = require("express");
 const router = express.Router();
 
@@ -13,7 +13,7 @@ router.get('/students', (request, response) => {
 });
 
 router.get('/students/:major', (request, response) => {
-    StudentsController.getAllStidemtsByMajor(request, response);
+    StudentsController.getAllStudentsByMajor(request, response);
 });
 
 module.exports = router;
