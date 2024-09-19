@@ -3,8 +3,8 @@ const { expect } = require('chai');
 const Utils = require('./utils');
 const sendPaymentRequestToApi = require('./3-payment');
 
-describe('sendPaymentRequestToApi', function () {
-  it('should call Utils.calculateNumber with SUM, totalAmount, and totalShipping', function () {
+describe('sendPaymentRequestToApi', () => {
+  it('should call Utils.calculateNumber with SUM, totalAmount, and totalShipping', () => {
     const spy = sinon.spy(Utils, 'calculateNumber');
     sendPaymentRequestToApi(100, 20);
     expect(spy.calledOnce).to.be.true;
