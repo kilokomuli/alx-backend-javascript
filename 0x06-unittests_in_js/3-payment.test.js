@@ -5,11 +5,11 @@ const sendPaymentRequestToApi = require('./3-payment');
 
 describe('sendPaymentRequestToApi', () => {
   it('should call Utils.calculateNumber with SUM, totalAmount, and totalShipping', () => {
-    const spy = sinon.spy(Utils, 'calculateNumber');
+    const spy = sinon.spy(Utils);
     sendPaymentRequestToApi(100, 20);
-    expect(spy.calledOnce).to.be.true;
-    expect(spy.calledWith('SUM', 100, 20)).to.be.true;
+    expect(spy.calculateNumber.calledWith('SUM', 100, 20)).to.be.true;
+    expect(spy.calculateNumber.callCount).to.be.equal(1);
 
-    spy.restore();
+    spy.calculateNumber.restore();
   });
 });
